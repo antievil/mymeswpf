@@ -1,0 +1,109 @@
+﻿<Window x:Class="mymeswpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mymeswpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid Name="MainGrid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="22"/>
+
+
+        </Grid.RowDefinitions>
+        
+         <WrapPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Click="button_Click"  Width="60" Height="30" Background="#3496E6"  Content="领 料"  ></Button>
+
+
+            <Button Click="eqp_Click"  Width="60" Height="30"  Content="设备"></Button>
+        </WrapPanel>
+
+
+
+        <DataGrid x:Name="gridAolots"  Background="Blue"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" AutoGenerateColumns="True" MouseRightButtonUp="gridCitys_MouseRightButtonUp">
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="cm" StaysOpen="true">
+                    <MenuItem Header="Dispatch" Click="MenuItem_Click"/>
+                    <MenuItem Header="Scrap" Click="Scrap_Click"/>
+                    <MenuItem Header="Hol d"/>
+                    <MenuItem Header="Release">
+                    <MenuItem Header="History"/>
+                    <MenuItem Header="xx"/>
+                    </MenuItem>
+                </ContextMenu>
+           </DataGrid.ContextMenu>
+                        <!--<DataGrid.Columns>
+
+
+
+                <DataGridTextColumn Binding="{Binding appid}" ClipboardContentBinding="{x:Null}" Header="appid"/>
+
+                <DataGridTextColumn Binding="{Binding }" ClipboardContentBinding="{x:Null}" Header="qty"/>
+
+                <DataGridTextColumn Binding="{Binding ZipCode}" ClipboardContentBinding="{x:Null}" Header="ZipCode"/>
+
+                <DataGridComboBoxColumn x:Name="cboProvince" ClipboardContentBinding="{x:Null}" Header="ProvinceID" SelectedValuePath="ProvinceID" SelectedValueBinding="{Binding Path=ProvinceID,UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="ProvinceName" SelectedItemBinding="{x:Null}" >
+
+
+
+                </DataGridComboBoxColumn>
+
+                <DataGridTextColumn Binding="{Binding DateCreated}" ClipboardContentBinding="{x:Null}" Header="DateCreated"/>
+
+                <DataGridTextColumn Binding="{Binding DateUpdated}" ClipboardContentBinding="{x:Null}" Header="DateUpdated"/>
+
+
+
+            </DataGrid.Columns>
+            
+            
+            
+            
+             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+
+
+               
+
+            </Grid>
+            
+            -->
+
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" >
+
+            <TextBlock Text="显示信息" TextAlignment="Center"  />
+
+            <TextBox Name="txtMsg"  Height="400" Text="" Width="500" TextAlignment="Center" />
+
+
+
+        </StackPanel>
+        
+        
+
+
+
+
+    </Grid>
+    
+
+</Window>
